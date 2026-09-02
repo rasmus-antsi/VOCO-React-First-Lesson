@@ -16,3 +16,17 @@
   font-size: 1.6rem;
   font-weight: 700;
 }
+
+.expense-item__button {
+  background: #2b2b2b;
+  border: 1px solid #6b6b6b;
+  border-radius: 8px;
+  color: #ffffff;
+  padding: 10px 16px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.expense-item__button:hover {
+  background: #4b4b4b;
+}
