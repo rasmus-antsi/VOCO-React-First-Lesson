@@ -1,7 +1,7 @@
 import './ExpenseItem.css'
 import DateBox from './DateBox.jsx'
 import Price from './Price.jsx'
-import Card from './Card.jsx'
+import Card from '../UI/Card.jsx'
 
 // The dark row that holds everything together.
 // Props: date, title, amount
