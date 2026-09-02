@@ -1,0 +1,28 @@
+.date-box {
+  background: #2b2b2b;
+  border: 2px solid #6b6b6b;
+  border-radius: 10px;
+  padding: 12px 18px;
+  min-width: 110px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.date-box__month {
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.date-box__day {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.date-box__year {
+  display: block;
+  font-size: 0.9rem;
+  color: #d4d4d4;
+}
