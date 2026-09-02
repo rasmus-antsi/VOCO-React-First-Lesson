@@ -4,14 +4,14 @@ import Price from './Price.jsx'
 
 // The dark row that holds everything together.
 // Props: date, title, amount
-function ExpenseItem(props) {
+function ExpenseItem({ date, title, amount }) {
   return (
     <div className="expense-item">
-      <DateBox date={props.date} />
+      <DateBox date={date} />
 
-      <h2 className="expense-item__title">{props.title}</h2>
+      <h2 className="expense-item__title">{title}</h2>
 
-      <Price amount={props.amount} />
+      <Price amount={amount} />
     </div>
   )
 }
