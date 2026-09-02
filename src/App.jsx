@@ -1,11 +1,10 @@
-// TODO 10: import ProductCard from './components/ProductCard.jsx'
-import ProductCard from './components/ProductCard.jsx'
+import ExpenseItem from './components/ExpenseItem.jsx'
 
 function App() {
   return (
     <div>
-		<ProductCard month="January" day="10" year="2023" title="New book" amount={30.99} />
-  		<ProductCard month="January" day="10" year="2023" title="New jeans" amount={99.99} />
+		<ExpenseItem date={new Date(2023, 0, 10)} title="New book" amount={30.99} />
+  		<ExpenseItem date={new Date(2023, 0, 10)} title="New jeans" amount={99.99} />
      </div>
   )
 }

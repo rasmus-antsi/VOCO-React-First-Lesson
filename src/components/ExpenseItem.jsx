@@ -1,19 +1,19 @@
-import './ProductCard.css'
+import './ExpenseItem.css'
 import DateBox from './DateBox.jsx'
 import Price from './Price.jsx'
 
 // The dark row that holds everything together.
-// Props: month, day, year, title, amount
-function ProductCard(props) {
+// Props: date, title, amount
+function ExpenseItem(props) {
   return (
-    <div className="product-card">
-      <DateBox month={props.month} day={props.day} year={props.year} />
+    <div className="expense-item">
+      <DateBox date={props.date} />
 
-      <h2 className="product-card__title">{props.title}</h2>
+      <h2 className="expense-item__title">{props.title}</h2>
 
       <Price amount={props.amount} />
     </div>
   )
 }
 
-export default ProductCard
+export default ExpenseItem

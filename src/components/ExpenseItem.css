@@ -1,4 +1,4 @@
-.product-card {
+.expense-item {
   display: flex;
   align-items: center;
   gap: 16px;
@@ -8,7 +8,7 @@
   margin-bottom: 16px;
 }
 
-.product-card__title {
+.expense-item__title {
   flex: 1;
   margin: 0;
   text-align: center;
