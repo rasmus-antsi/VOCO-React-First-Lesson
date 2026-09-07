@@ -3,7 +3,7 @@ import './ExpenseForm.css'
 
 // The form itself. It reads the three inputs, and hands the finished
 // object UP to its parent through the onSaveExpenseData prop.
-function ExpenseForm({ onSaveExpenseData }) {
+function ExpenseForm({ onSaveExpenseData, onCancel }) {
   // One piece of state per input field.
   const [enteredTitle, setEnteredTitle] = useState('')
   const [enteredAmount, setEnteredAmount] = useState('')
@@ -78,6 +78,10 @@ function ExpenseForm({ onSaveExpenseData }) {
       </div>
 
       <div className="new-expense__actions">
+        {/* type="button" -- without it a button inside a form submits it */}
+        <button type="button" onClick={onCancel}>
+          Cancel
+        </button>
         <button type="submit">Add Expense</button>
       </div>
     </form>
