@@ -6,8 +6,10 @@ import NewExpense from './components/NewExpense/NewExpense.jsx'
 // derived from props or state, so there is no reason to rebuild it on
 // every render. Naming it in CAPITALS is the usual signal for a constant.
 const DUMMY_EXPENSES = [
-  { id: 'e1', title: 'New book', amount: 30.99, date: new Date(2023, 0, 10) },
-  { id: 'e2', title: 'New jeans', amount: 99.99, date: new Date(2023, 0, 10) },
+  { id: 'e1', title: 'New book', amount: 30.99, date: new Date(2024, 11, 10) },
+  { id: 'e2', title: 'New jeans', amount: 99.99, date: new Date(2024, 2, 5) },
+  { id: 'e3', title: 'Coffee machine', amount: 129.5, date: new Date(2023, 6, 21) },
+  { id: 'e4', title: 'Desk lamp', amount: 45.0, date: new Date(2025, 1, 14) },
 ]
 
 function App() {
