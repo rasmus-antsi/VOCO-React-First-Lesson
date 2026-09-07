@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import './Expenses.css'
-import ExpenseItem from './ExpenseItem.jsx'
 import ExpensesFilter from './ExpensesFilter.jsx'
+import ExpensesList from './ExpensesList.jsx'
 
-// The wrapping component. Its only job is to hold the individual
-// ExpenseItem rows. Outermost element is a plain div, as the task requires.
+// The wrapping component. Outermost element is a plain div, as Ülesanne 2 requires.
+// It owns the selected year and decides WHAT to show; ExpensesList decides HOW.
 // Props: expenses -- an array of expense objects
 function Expenses({ expenses }) {
   // This component OWNS the selected year. ExpensesFilter only displays it.
@@ -32,14 +32,7 @@ function Expenses({ expenses }) {
         selectedYear={filteredYear}
         onChangeFilter={filterChangeHandler}
       />
-      {filteredExpenses.map((expense) => (
-        <ExpenseItem
-          key={expense.id}
-          date={expense.date}
-          title={expense.title}
-          amount={expense.amount}
-        />
-      ))}
+      <ExpensesList expenses={filteredExpenses} />
     </div>
   )
 }
