@@ -1,20 +1,21 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Expenses from './components/Expenses/Expenses.jsx'
 import NewExpense from './components/NewExpense/NewExpense.jsx'
 
-// Starting data ("algandmestik"). Lives OUTSIDE the component: it is not
-// derived from props or state, so there is no reason to rebuild it on
-// every render. Naming it in CAPITALS is the usual signal for a constant.
-const DUMMY_EXPENSES = [
-  { id: 'e1', title: 'New book', amount: 30.99, date: new Date(2024, 11, 10) },
-  { id: 'e2', title: 'New jeans', amount: 99.99, date: new Date(2024, 2, 5) },
-  { id: 'e3', title: 'Coffee machine', amount: 129.5, date: new Date(2023, 6, 21) },
-  { id: 'e4', title: 'Desk lamp', amount: 45.0, date: new Date(2025, 1, 14) },
-]
-
 function App() {
-  // App now OWNS the list. The dummy array is only the initial value.
-  const [expenses, setExpenses] = useState(DUMMY_EXPENSES)
+  // The initial value is read from localStorage ONCE, on the first render.
+  // If nothing was ever saved, getItem returns null and we start empty.
+  const [expenses, setExpenses] = useState(() => {
+    const storedExpenses = localStorage.getItem('expenses')
+
+    return storedExpenses ? JSON.parse(storedExpenses) : []
+  })
+
+  // Runs after every render in which `expenses` changed -- and only then,
+  // thanks to the dependency array. Keeps the browser storage in sync.
+  useEffect(() => {
+    localStorage.setItem('expenses', JSON.stringify(expenses))
+  }, [expenses])
 
   const addExpenseHandler = (expense) => {
     // Function form of the setter: React hands us the guaranteed-latest

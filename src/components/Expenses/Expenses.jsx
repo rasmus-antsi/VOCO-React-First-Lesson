@@ -18,10 +18,12 @@ function Expenses({ expenses }) {
   }
 
   // filter() keeps only the elements whose callback returns true.
+  // new Date(...) because expenses read back from localStorage carry the
+  // date as a string -- JSON has no date type.
   // getFullYear() gives a number, filteredYear is a string from the <select>,
   // so one side has to be converted before comparing.
   const filteredExpenses = expenses.filter((expense) => {
-    return expense.date.getFullYear().toString() === filteredYear
+    return new Date(expense.date).getFullYear().toString() === filteredYear
   })
 
   console.log('Filtered expenses:', filteredExpenses)

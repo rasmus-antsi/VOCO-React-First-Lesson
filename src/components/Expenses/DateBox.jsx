@@ -1,12 +1,14 @@
 import './DateBox.css'
 
 // This component shows the little date card on the left.
-// It now takes ONE prop: date -- a real JavaScript Date object.
-// It derives the three pieces it displays from that object itself.
+// It takes ONE prop: date -- either a Date object or the string that
+// comes back out of localStorage. new Date(...) accepts both.
 function DateBox({ date }) {
-  const month = date.toLocaleString('en-US', { month: 'long' })
-  const day = date.toLocaleString('en-US', { day: '2-digit' })
-  const year = date.getFullYear()
+  const expenseDate = new Date(date)
+
+  const month = expenseDate.toLocaleString('en-US', { month: 'long' })
+  const day = expenseDate.toLocaleString('en-US', { day: '2-digit' })
+  const year = expenseDate.getFullYear()
 
   return (
     <div className="date-box">
